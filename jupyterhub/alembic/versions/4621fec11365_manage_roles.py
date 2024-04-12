@@ -22,7 +22,7 @@ def upgrade():
     for table in ['group_role_map', 'roles', 'service_role_map', 'user_role_map']:
         if table not in tables:
             continue
-        op.add_column(table, sa.Column('managed_by_auth', sa.Boolean(), nullable=True))
+        op.add_column(table, sa.Column('managed_by_auth', sa.Boolean(), nullable=False))
 
 
 def downgrade():
